@@ -1,0 +1,18 @@
+
+header.account {
+ height: 400px;
+ width: 100%;
+ display: flex;
+position: relative;
+}
+
+
+header.account div {
+display: flex;
+justify-content: center;
+}
+
+header.profile h2 {
+
+  font-family: "Bungee", sans-serif;
+}
