@@ -1,18 +1,14 @@
 
-header.account {
- height: 400px;
- width: 100%;
- display: flex;
-position: relative;
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #E9D3FF;
+  background-image: url(/images/robots.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 120px;
+  
 }
 
-
-header.account div {
-display: flex;
-justify-content: center;
-}
-
-header.profile h2 {
-
-  font-family: "Bungee", sans-serif;
-}
