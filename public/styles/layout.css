@@ -22,8 +22,8 @@ body {
 }
 
 main {
-  width: 90%;
-  background-color: #FFEFFF;
+  
+  background-color: #fefefe;
   align-items: center;
   flex-direction: column;
   
@@ -31,7 +31,6 @@ main {
 
 section {
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 

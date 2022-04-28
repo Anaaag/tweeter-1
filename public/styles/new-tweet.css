@@ -1,6 +1,35 @@
 #tweet-text {
   background-color: transparent;
   border: none;
-  border-bottom:  5px solid black;
+  border-bottom:  4px solid black;
+  width: 100%;
+  resize: none;
+  align-items: center;
+}
 
+
+.counter {
+font-family: "Bungee", sans-serif;
+padding: 5px;
+float: right;
+}
+
+.text-pink {
+  color: rgb(219, 147, 159);
+}
+
+.new-tweet {
+  color: black;
+}
+
+.button {
+  background-color: black;
+  border: none;
+  font-family: "Bungee", sans-serif;
+  color: White;
+  background: #000000;
+}
+
+button:hover {
+  color: #B19CD8;
 }
