@@ -10,8 +10,6 @@ $(document).ready(function () {
     if (length <= maxChars) $counter.removeClass("text-pink")
     
 
-    
-
   });
 
 

@@ -1,5 +1,5 @@
 
-header {
+header.header {
   height: 400px;
   width: 100%;
   background-color: #E9D3FF;
@@ -12,4 +12,6 @@ header {
   font-size: 35px;
   color: black;
 }
+
+
 

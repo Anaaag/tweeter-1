@@ -16,16 +16,19 @@ html {
 
 body {
   color: #545149;
-  background-color: #FFEFFF;
+  background-color: #fefefe;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
 }
 
 main {
   
-  background-color: #fefefe;
+  background-color: inherit;
   align-items: center;
   flex-direction: column;
+  margin: 50px auto;
+  width: 90%;
+
   
 }
 
