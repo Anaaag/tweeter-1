@@ -1,35 +1,22 @@
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
 
 $(document).ready(() => {
+  const maxChars = 140;
   const $tweetForm = $("#tweet-form")
   $tweetForm.on("submit", function(event) {
-  event.preventDefault();
-  const tweetText = $(this).serialize();
-  $.post("/tweets", tweetText);
+    event.preventDefault();
+    const $textArea = $(this).find("textarea")
+    const tweetText = $textArea.val()
+    const $counter = $(this).find("output")
+    if (tweetText === "") return alert("Error");
+    if (tweetText.length > maxChars) return alert("Error")
+
+    const tweetSerialized = $(this).serialize();
+    $.post("/tweets", tweetSerialized)
+    .then(() => {
+      loadTweets()
+      $textArea.val("") 
+      $counter.val(maxChars)
+    })
   });
 
 
@@ -38,7 +25,7 @@ $(document).ready(() => {
     const avatars = tweet.user.avatars
     const handle = tweet.user.handle
     const text = tweet.content.text
-    const timeAgo = tweet.created_at
+    const timeAgo = timeago.format(tweet.created_at)
     const htmlElement = `
     <article class="tweet">
       <header>
@@ -64,16 +51,28 @@ $(document).ready(() => {
 
   
   
-  
+
   const renderTweets = function(tweets) {
+    const $tweetsContainer = $(`#tweets-container`)
+    $tweetsContainer.html("")
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $(`#tweets-container`).append($tweet);
+      $tweetsContainer.prepend($tweet);
   
     }
     
 }
-renderTweets(data);
+
+  const loadTweets = function() {
+    $.get("/tweets")
+    .then((data) => {
+     renderTweets(data) 
+    })
+  }
+
+loadTweets();
+
+
 
 
 
