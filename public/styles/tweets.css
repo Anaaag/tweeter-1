@@ -15,6 +15,7 @@ article.tweet {
   width: 80%;
   min-height: 250px;
   font-size: 1.3rem;
+  margin: 1.5em 0em;
 
 }
 /* tweet text */

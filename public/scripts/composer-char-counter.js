@@ -4,7 +4,6 @@ $(document).ready(function () {
     const maxChars = 140;
     const length = $(this).val().length;
     const $counter = $(this).siblings("div").children("output");
-    console.log("Counter", maxChars - length);
     $counter.text(maxChars - length);
     if (length > maxChars)  $counter.addClass("text-purple");
     if (length <= maxChars) $counter.removeClass("text-purple")
