@@ -17,6 +17,27 @@ nav .left {
   font-size: 50px;
 }
 
+nav .fa-solid.fa-angles-down {
+  color: white;
+  animation-name: bounce;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 nav .right {
   display: flex;
   flex-direction: column;
@@ -26,4 +47,3 @@ nav .right {
   font-size: 25px;
 
 }
-

@@ -4,6 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -16,8 +17,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet"> 
- 
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -44,43 +46,42 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-
     <div class="left">
       <span>tweeter</span>
     </div>
-
     <div class="right">
       <span><strong>Write</strong> a new tweet</span>
-      <i class="fa-solid fa-angles-down"></i>
+      <span><i class="fa-solid fa-angles-down"></i></span>
     </div>
-
   </nav>
   <header class="header">
-    <div>
+    <div class="avatar">
       <img src="/images/profile-hex.png">
     </div>
     <br>
-    <div>
+    <div class="avatarName">
       <h2>Ana</h2>
     </div>
   </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-  <section class="new-tweet">
-    <h2>Compose Tweets</h2>
-    <form id="tweet-form">
-      <br>
-      <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-      <div>
-        <button type="submit" class="button">Tweet</button>
-        <output name="counter" class="counter" for="tweet-text">140</output>
-      </div>
-    </form>
-  </section>
-  <section id="tweets-container">
-   
-  </section>
+    <div class="error-line">
+      <p class="error-message"></p>
+    </div>
+    <section class="new-tweet">
+      <h2>Compose Tweets</h2>
+      <form id="tweet-form">
+        <br>
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div>
+          <button type="submit" class="button">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+    <section id="tweets-container">
+    </section>
   </main>
 </body>
 

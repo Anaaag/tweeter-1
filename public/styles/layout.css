@@ -14,6 +14,8 @@ html {
  * Global layout stuff
  */
 
+ 
+
 body {
   color: #545149;
   background-color: #fefefe;
@@ -25,19 +27,71 @@ main {
   
   background-color: inherit;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   margin: 50px auto;
   width: 90%;
 
   
 }
+ 
 
 section {
   display: flex;
   flex-direction: column;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    margin-top: 100px;
+    flex-direction: row; 
+    
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    margin-left: 45px;
+    margin-right: 55px;
+}
+
+  /* .nav {
+    display: flex;
+    height: 400px;
+    margin-left: 5%;
+  } */
+
+  main {
+    width: 800px;
+  }
+
+  /* #tweet-text {
+    display:block;
+    margin: 10px;
+  } */
+
+  section#tweets-container {
+    display: flex;
+    width: inherit;
+  }
+
+  .new-tweet {
+    display: flex;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  .error-line {
+    display: none;
+    padding: 0px 70px;
+    margin-left: 70px;
+    margin-right: 70px
+  }
+
+}
+
+
 
