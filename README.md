@@ -12,6 +12,16 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
+## Screenshots 
+
+!["screenshot1"](https://github.com/Anaaag/tweeter-1/blob/master/docs/screenshot1.png?raw=true)
+!["Screenshot2"](https://github.com/Anaaag/tweeter-1/blob/master/docs/screenshot2.png?raw=true)
+!["Screenshot3"](https://github.com/Anaaag/tweeter-1/blob/master/docs/screenshot3.png?raw=true)
+
+
+
+
+
 ## Dependencies
 
 - Express
