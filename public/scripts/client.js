@@ -1,12 +1,12 @@
 
 $(document).ready(() => {
   const maxChars = 140;
-  const $tweetForm = $("#tweet-form")
-  $tweetForm.on("submit", function (event) {
+  const $tweetForm = $("#tweet-form");
+  $tweetForm.on("submit", function(event) {
     event.preventDefault();
-    const $textArea = $(this).find("textarea")
-    const tweetText = $textArea.val()
-    const $counter = $(this).find("output")
+    const $textArea = $(this).find("textarea");
+    const tweetText = $textArea.val();
+    const $counter = $(this).find("output");
     const escapedText = escape(tweetText);
     if (tweetText !== escapedText) {
       $(".error-message").text("Invalid Input");
@@ -17,24 +17,24 @@ $(document).ready(() => {
       $(".error-message").text("!!Error Tweet field empty!!");
       $(".error-line").slideDown(300).slideUp(3000);
       return;
-      //return alert("Error");
+      
     }
     if (tweetText.length > maxChars) {
-      $(".error-message").text("Character Limit Exceeded");
+      $(".error-message").text("!!Character Limit Exceeded!!");
       $(".error-line").slideDown(300).slideUp(3000);
       return;
-      // return alert("Error")
+      
     }
     const tweetSerialized = $(this).serialize();
     $.post("/tweets", tweetSerialized)
       .then(() => {
-        loadTweets()
-        $textArea.val("")
-        $counter.val(maxChars)
-      })
+        loadTweets();
+        $textArea.val("");
+        $counter.val(maxChars);
+      });
   });
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -42,12 +42,12 @@ $(document).ready(() => {
 
 
 
-  const createTweetElement = function (tweet) {
-    const name = tweet.user.name
-    const avatars = tweet.user.avatars
-    const handle = tweet.user.handle
-    const text = tweet.content.text
-    const timeAgo = timeago.format(tweet.created_at)
+  const createTweetElement = function(tweet) {
+    const name = tweet.user.name;
+    const avatars = tweet.user.avatars;
+    const handle = tweet.user.handle;
+    const text = tweet.content.text;
+    const timeAgo = timeago.format(tweet.created_at);
     const htmlElement = `
     <article class="tweet">
       <header>
@@ -67,30 +67,28 @@ $(document).ready(() => {
         </span>
       </footer>
     </article>
-    `
+    `;
     return htmlElement;
-  }
+  };
 
 
-
-
-  const renderTweets = function (tweets) {
-    const $tweetsContainer = $(`#tweets-container`)
-    $tweetsContainer.html("")
+  const renderTweets = function(tweets) {
+    const $tweetsContainer = $(`#tweets-container`);
+    $tweetsContainer.html("");
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $tweetsContainer.prepend($tweet);
 
     }
 
-  }
+  };
 
   const loadTweets = function () {
     $.get("/tweets")
       .then((data) => {
-        renderTweets(data)
-      })
-  }
+        renderTweets(data);
+      });
+  };
 
   loadTweets();
 

@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -14,7 +17,7 @@ html {
  * Global layout stuff
  */
 
- 
+
 
 body {
   color: #545149;
@@ -24,16 +27,16 @@ body {
 }
 
 main {
-  
+
   background-color: inherit;
   align-items: center;
   flex-direction: row;
   margin: 50px auto;
   width: 90%;
 
-  
+
 }
- 
+
 
 section {
   display: flex;
@@ -46,8 +49,8 @@ section {
   body {
     display: flex;
     margin-top: 100px;
-    flex-direction: row; 
-    
+    flex-direction: row;
+
   }
 
   header {
@@ -56,7 +59,7 @@ section {
     margin-top: 10%;
     margin-left: 45px;
     margin-right: 55px;
-}
+  }
 
   /* .nav {
     display: flex;
@@ -68,10 +71,6 @@ section {
     width: 800px;
   }
 
-  /* #tweet-text {
-    display:block;
-    margin: 10px;
-  } */
 
   section#tweets-container {
     display: flex;
@@ -91,7 +90,8 @@ section {
     margin-right: 70px
   }
 
+  .avatar {
+    display: flex;
+    padding-top: 1px;
+  }
 }
-
-
-
